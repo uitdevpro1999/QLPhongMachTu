@@ -16,5 +16,7 @@ Private Clinics Management is the software have fully functional to manage a pri
 - Visual Studio
 - SQL Sever 
 - Visual Studio Code
+# Support OS
+- windows xp/7/8/10
 
 Instructors: Nguyen Cong Hoan 
