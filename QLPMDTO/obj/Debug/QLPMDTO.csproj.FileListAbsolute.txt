@@ -1,0 +1,6 @@
+C:\Users\krypton\source\repos\QLPM\QLPMDTO\bin\Debug\QLPMDTO.dll
+C:\Users\krypton\source\repos\QLPM\QLPMDTO\bin\Debug\QLPMDTO.pdb
+C:\Users\krypton\source\repos\QLPM\QLPMDTO\obj\Debug\QLPMDTO.csprojAssemblyReference.cache
+C:\Users\krypton\source\repos\QLPM\QLPMDTO\obj\Debug\QLPMDTO.csproj.CoreCompileInputs.cache
+C:\Users\krypton\source\repos\QLPM\QLPMDTO\obj\Debug\QLPMDTO.dll
+C:\Users\krypton\source\repos\QLPM\QLPMDTO\obj\Debug\QLPMDTO.pdb
