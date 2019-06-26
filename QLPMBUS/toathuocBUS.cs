@@ -19,5 +19,9 @@ namespace QLPMBUS
             bool re = ttDAL.them(tt);
             return re;
         }
+        public int autogenerate_matoa()
+        {
+            return ttDAL.autogenerate_matoa();
+        }
     }
 }

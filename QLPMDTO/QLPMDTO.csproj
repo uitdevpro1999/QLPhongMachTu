@@ -43,10 +43,10 @@
   <ItemGroup>
     <Compile Include="benhDTO.cs" />
     <Compile Include="benhnhanDTO.cs" />
+    <Compile Include="cachdungDTO.cs" />
     <Compile Include="chandoanDTO.cs" />
     <Compile Include="hoadonDTO.cs" />
     <Compile Include="kethuocDTO.cs" />
-    <Compile Include="nhanvienDTO.cs" />
     <Compile Include="phieukhambenhDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="thuocDTO.cs" />

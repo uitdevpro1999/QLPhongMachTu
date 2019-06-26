@@ -20,6 +20,15 @@ namespace QLPMDTO
         public float DonGia { get => donGia; set => donGia = value; }
         public string DVT { get => dVt; set => dVt = value; }
         public string CachDung { get => cachDung; set => cachDung = value; }
-
+    }
+    public class Donvi
+    {
+        private string donVi;
+        public string DonVi { get => donVi; set => donVi = value; }
+    }
+    public class Cachdung
+    {
+        private string cachDung;
+        public string CachDung { get => cachDung; set => cachDung = value; }
     }
 }

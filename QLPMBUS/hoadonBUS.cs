@@ -24,6 +24,21 @@ namespace QLPMBUS
            float re = hdDAL.tienthuoc(hd,mapkb);
             return re;
         }
-       
+        public int autogenerate_mahd()
+        {
+            return hdDAL.autogenerate_mahd();
+        }
+        public List<HoadonDTO> selectByMonth(string month, string year)
+        {
+            return hdDAL.selectByMonth(month, year);
+        }
+        public int sobenhnhan(string ngHD)
+        {
+            return hdDAL.sobenhnhan(ngHD);
+        }
+        public float doanhthu(string ngHD)
+        {
+            return hdDAL.doanhthu(ngHD);
+        }
     }
 }

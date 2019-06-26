@@ -25,7 +25,6 @@ namespace QLPMBUS
             bool re = beDAL.sua(be, maBenhold);
             return re;
         }
-
         public bool xoa(BenhDTO be)
         {
             bool re = beDAL.xoa(be);
@@ -34,6 +33,14 @@ namespace QLPMBUS
         public List<BenhDTO> select()
         {
             return beDAL.select();
+        }
+        public List<BenhDTO> selectByKeyWord(string sKeyword)
+        {
+            return beDAL.selectByKeyWord(sKeyword);
+        }
+        public int autogenerate_mabenh()
+        {
+            return beDAL.autogenerate_mabenh();
         }
     }
 }

@@ -219,5 +219,76 @@ namespace QLPMDAL
             }
             return lspkb;
         }
+        public void tk()
+        {
+            string query = string.Empty;
+            query += "SELECT * FROM tblTK ";
+ 
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+                    
+                    try
+                    {
+                        con.Open();
+                        SqlDataReader reader = null;
+                        reader = cmd.ExecuteReader();
+                        if (reader.HasRows == true)
+                        {
+                            while (reader.Read())
+                            {
+                                PhieukhambenhDTO.TienKham = float.Parse(reader["tienKham"].ToString());
+                            }
+                        }
+
+                        con.Close();
+                        con.Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        
+                    }
+                }
+            }
+        }
+        public bool thaydoiTK(float tkmoi,float tkcu)
+        {
+            string query = string.Empty;
+            query += "UPDATE [tblTK] set tienKham=@tkmoi where tienKham=@tkcu";
+
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+                    cmd.Parameters.AddWithValue("@tkmoi", tkmoi);
+                    cmd.Parameters.AddWithValue("@tkcu", tkcu);
+                   
+                    try
+                    {
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                        con.Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        return false;
+                    }
+                }
+
+                return true;
+            }
+        }
     }
 }

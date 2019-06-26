@@ -1,0 +1,50 @@
+﻿<Window x:Class="QLPM.quydinh"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:QLPM"
+        mc:Ignorable="d"
+        Title="Thay đổi quy định" Height="450" Width="800">
+    <Grid>
+        <materialDesign:ColorZone Mode="PrimaryMid">
+            <StackPanel Orientation="Horizontal" Margin="2">
+                <RadioButton x:Name="loaibenh" Style="{StaticResource MaterialDesignTabRadioButton}"  Margin="4" IsChecked="True" Content="LOẠI BỆNH" />
+                <RadioButton x:Name="thuoc" Style="{StaticResource MaterialDesignTabRadioButton}" Margin="4" IsChecked="False" Content="THUỐC" Click="thuoc_Click" />
+                <RadioButton x:Name="tienkham" Style="{StaticResource MaterialDesignTabRadioButton}" Margin="4" IsChecked="False" Content="TIỀN KHÁM" Click="tienkham_Click" />
+                <RadioButton x:Name="benhnhan" Style="{StaticResource MaterialDesignTabRadioButton}" Margin="4" IsChecked="False" Content="BỆNH NHÂN" />
+            </StackPanel>
+        </materialDesign:ColorZone>
+        <Button x:Name="thaydoitk" Content="Button" HorizontalAlignment="Left" Margin="495,161,0,0" Visibility="Hidden" VerticalAlignment="Top" Width="75" Click="thaydoitk_Click"/>
+        <Label x:Name="tk1" Content="Tiền khám:" HorizontalAlignment="Left" Margin="224,161,0,0" Visibility="Hidden" VerticalAlignment="Top"/>
+        <TextBox x:Name="tk" HorizontalAlignment="Left" Height="23" Margin="325,162,0,0" Visibility="Hidden" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="donvi" Visibility="Hidden" materialDesign:HintAssist.Hint="Thêm đơn vị" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="91,112,590.6,259" />
+        <Button x:Name="thaydoidv" Visibility="Hidden" Content="Thêm" HorizontalAlignment="Left" Margin="224,134,0,0" VerticalAlignment="Top" Width="75" Click="thaydoidv_Click"/>
+        <Button x:Name="thaydoicd" Visibility="Hidden" Content="Thêm" HorizontalAlignment="Left" Margin="651,134,0,0" VerticalAlignment="Top" Width="75" Click="thaydoicd_Click"/>
+        <StackPanel x:Name="paneldv" Visibility="Hidden" Orientation="Horizontal" Margin="110,179,481.6,155">
+            <RadioButton x:Name="sua1" Style="{StaticResource MaterialDesignTabRadioButton}" Margin="4" IsChecked="True" Content="SỬA" Click="sua1_Click" />
+            <RadioButton x:Name="xoa1" Style="{StaticResource MaterialDesignTabRadioButton}" Margin="4" IsChecked="False" Content="XÓA" Click="xoa1_Click" />
+        </StackPanel>
+        <StackPanel x:Name="panelcd" Visibility="Hidden" Orientation="Horizontal" Margin="540,184,-0.4,160">
+            <RadioButton x:Name="sua" Style="{StaticResource MaterialDesignTabRadioButton}" Margin="4" IsChecked="True" Content="SỬA" Click="RadioButton_Click" />
+            <RadioButton x:Name="xoa" Style="{StaticResource MaterialDesignTabRadioButton}" Margin="4" IsChecked="False" Content="XÓA" Click="RadioButton_Click_1" />
+        </StackPanel>
+        <TextBox x:Name="cachdung" Visibility="Hidden" materialDesign:HintAssist.Hint="Thêm cách dùng" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="521,112,160.6,259" />
+        <ComboBox x:Name="cbb_donvi" Visibility="Hidden" materialDesign:HintAssist.Hint="Đơn Vị" IsEditable="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}" Margin="63,290,629.6,90" Height="40">
+        </ComboBox>
+        <ComboBox x:Name="cbb_cachdung" Visibility="Hidden" materialDesign:HintAssist.Hint="Cách Dùng" IsEditable="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}" Margin="507,290,188.6,90" Height="40">
+        </ComboBox>
+        <TextBlock x:Name="to1" Visibility="Hidden" Style="{StaticResource MaterialDesignHeadlineTextBlock}" Margin="179,290,538.6,90">
+            TO
+        </TextBlock>
+        <TextBox x:Name="dv2" Visibility="Hidden" materialDesign:HintAssist.Hint="Đơn vị" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="224,281,457.6,90" />
+        <TextBlock x:Name="to2" Visibility="Hidden" Style="{StaticResource MaterialDesignHeadlineTextBlock}" Margin="614,290,106.6,90"><Run Text="TO"/></TextBlock>
+        <TextBox x:Name="cd2" Visibility="Hidden" materialDesign:HintAssist.Hint="Cách dùng" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="661,281,20.6,90" />
+        <Button x:Name="suadv" Visibility="Hidden" Content="Sửa" HorizontalAlignment="Left" Margin="156,360,0,0" VerticalAlignment="Top" Width="75" Click="suadv_Click" />
+        <Button x:Name="suacd" Visibility="Hidden" Content="Sửa" HorizontalAlignment="Left" Margin="591,360,0,0" VerticalAlignment="Top" Width="75" Click="suacd_Click" />
+        <Button x:Name="xoadv" Visibility="Hidden" Content="Xóa" HorizontalAlignment="Left" Margin="237,300,0,0" VerticalAlignment="Top" Width="75" Click="xoadv_Click" />
+        <Button x:Name="xoacd" Visibility="Hidden" Content="Xóa" HorizontalAlignment="Left" Margin="671,300,0,0" VerticalAlignment="Top" Width="75" Click="xoacd_Click" />
+
+    </Grid>
+</Window>

@@ -44,9 +44,9 @@
   <ItemGroup>
     <Compile Include="benhDAL.cs" />
     <Compile Include="benhnhanDAL.cs" />
+    <Compile Include="chandoanDAL.cs" />
     <Compile Include="hoadonDAL.cs" />
     <Compile Include="kethuocDAL.cs" />
-    <Compile Include="nhanvienDAL.cs" />
     <Compile Include="phieukhambenhDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="thuocDAL.cs" />

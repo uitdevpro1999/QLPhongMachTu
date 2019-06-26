@@ -260,5 +260,44 @@ namespace QLPMDAL
             }
             return lsBenhNhan;
         }
+        public int autogenerate_mabn()
+        {
+            int mabn = 1;
+            string query = string.Empty;
+            query += "SELECT MAX (KQ.MABN) AS MM from (SELECT CONVERT(float, tblBENHNHAN.maBN) AS MABN FROM tblBENHNHAN ) AS KQ";
+
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+                    try
+                    {
+                        con.Open();
+                        SqlDataReader reader = null;
+                        reader = cmd.ExecuteReader();
+                        if (reader.HasRows == true)
+                        {
+                            while (reader.Read())
+                            {
+                                mabn = int.Parse(reader["MM"].ToString()) + 1;
+                            }
+                        }
+
+                        con.Close();
+                        con.Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+
+                    }
+                }
+            }
+            return mabn;
+        }
     }
 }

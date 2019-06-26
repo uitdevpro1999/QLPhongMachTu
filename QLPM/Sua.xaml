@@ -1,0 +1,28 @@
+﻿<Window x:Class="QLPM.Sua"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QLPM"
+        mc:Ignorable="d"
+        Title="Thay đổi thông tin bệnh nhân" Height="450" Width="554.739">
+    <Grid>
+
+        <Label Content="Họ và Tên:" HorizontalAlignment="Left" Height="26" Margin="17,102,0,0" VerticalAlignment="Top" Width="64"/>
+        <Label Content="Giới Tính:" HorizontalAlignment="Left" Height="26" Margin="278,57,0,0" VerticalAlignment="Top" Width="60"/>
+        <Label Content="Ngày Sinh:" HorizontalAlignment="Left" Height="26" Margin="278,102,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label Content="Địa Chỉ:" HorizontalAlignment="Left" Height="26" Margin="21,146,0,0" VerticalAlignment="Top" Width="60"/>
+        <Label Content="Mã Bệnh Nhân:" HorizontalAlignment="Left" Height="26" Margin="17,57,0,0" VerticalAlignment="Top" Width="93"/>
+
+        <TextBox x:Name="mabenhnhan" HorizontalAlignment="Left" Height="20" Margin="127,61,0,0" VerticalAlignment="Top" Width="127" Foreground="Gray"/>
+
+        <TextBox x:Name="hoten" HorizontalAlignment="Left" Height="20" Margin="127,102,0,0" Text="" VerticalAlignment="Top" Width="114" Foreground="Gray"/>
+        <TextBox x:Name="diachi" HorizontalAlignment="Left" Height="20" Margin="127,146,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="114" Foreground="Gray"/>
+        <RadioButton x:Name="radio1" Content="Nam" HorizontalAlignment="Left" Margin="388,63,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="radio2" Content="Nữ" HorizontalAlignment="Left" Margin="450,63,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="ngaysinh" HorizontalAlignment="Left" Margin="399,103,0,0" VerticalAlignment="Top"/>
+        <Button Content="Thay đổi" HorizontalAlignment="Left" Height="30" Margin="81,239,0,0" VerticalAlignment="Top" Width="134" Click="Sua_Click"/>
+        <Button x:Name="quaylai" Content="Quay lại" HorizontalAlignment="Left" Height="30" Margin="314,239,0,0" VerticalAlignment="Top" Width="137" Click="Quaylai_Click"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,27 @@
+﻿<Window x:Class="QLPM.themThuoc"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QLPM"
+        mc:Ignorable="d"
+        Title="themThuoc" Height="450" Width="600">
+    <Grid>
+
+        
+        <TextBox x:Name="mathuoc" HorizontalAlignment="Left" Height="23" Margin="255,61,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="dongia" HorizontalAlignment="Left" Height="23" Margin="255,216,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tenthuoc" HorizontalAlignment="Left" Height="23" Margin="255,109,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label  Content="Đơn vị tính:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,156,0,0"/>
+        <Label  Content="Tên thuốc:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,106,0,0"/>
+        <Label  Content="Mã thuốc:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,58,0,0" RenderTransformOrigin="1.942,0.787"/>
+        <Label  Content="Đơn giá:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,212,0,0"/>
+        <Label  Content="Cách dùng:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,269,0,0"/>
+        <Button x:Name="them" Content="Thêm" HorizontalAlignment="Left" Height="28" Margin="208,340,0,0" VerticalAlignment="Top" Width="131" Click="Them_Click"/>
+        <ComboBox x:Name="donvi" HorizontalAlignment="Left" Margin="255,156,0,0" VerticalAlignment="Top" Width="120">
+        </ComboBox>
+        <ComboBox x:Name="cachdung" HorizontalAlignment="Left" Margin="255,267,0,0" VerticalAlignment="Top" Width="120"/>
+
+
+    </Grid>
+</Window>

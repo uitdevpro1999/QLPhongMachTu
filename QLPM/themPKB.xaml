@@ -1,0 +1,39 @@
+﻿<Window x:Class="QLPM.themPKB"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:QLPM"
+        mc:Ignorable="d"
+        Title="Thêm phiếu khám bệnh" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="383*"/>
+            <ColumnDefinition Width="410*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="trieuchung" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Margin="170,108,0,0"/>
+        <Label Content="Họ tên:" HorizontalAlignment="Left" Margin="301,42,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.869,0.506"/>
+        <Label Content="Ngày Khám:" HorizontalAlignment="Left" Margin="91.662,42,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label Content="Triệu Chứng: " HorizontalAlignment="Left" Margin="85,104,0,0" VerticalAlignment="Top"/>
+        <Label Content="Dự đoán loại bệnh: " HorizontalAlignment="Left" Margin="2.662,104,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <ComboBox x:Name="benh" HorizontalAlignment="Left" Margin="137.662,108,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <Label x:Name="hoten" Content="" HorizontalAlignment="Left" Margin="354,42,0,0" VerticalAlignment="Top" Width="116" Grid.ColumnSpan="2"/>
+        <Label x:Name="ngay" Content="" HorizontalAlignment="Left" Margin="198.662,42,0,0" VerticalAlignment="Top" Width="135" Grid.Column="1"/>
+        <DataGrid HorizontalAlignment="Left" Height="196" Margin="10,214,0,0" VerticalAlignment="Top" Width="774" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="mapkb" HorizontalAlignment="Left" Height="23" Margin="80.662,164,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <Label Content="Mã PKB: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2.662,162,0,0" RenderTransformOrigin="0.444,-0.394" Grid.Column="1"/>
+        <Button Content="Kê toa" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="170,168,0,0" Click="Button_Click_3"/>
+        <Button Content="Lập phiếu" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="77,168,0,0" Click="Button_Click_1"/>
+        <ComboBox x:Name="mabenhnhan" HorizontalAlignment="Left" Margin="168,42,0,0" VerticalAlignment="Top" Width="47" Height="25"/>
+        <Label Content="Mã bệnh nhân" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="77,42,0,0"/>
+        <Button HorizontalAlignment="Left" Margin="225,42,0,0" VerticalAlignment="Top" Width="62" Height="28" RenderTransformOrigin="2.926,-2.622" Click="Button_Click">
+            <materialDesign:PackIcon
+    Kind="Check"
+    Height="20"
+    Width="20" />
+        </Button>
+        <Button Content="Hủy" HorizontalAlignment="Left" Margin="268,168,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2"/>
+
+    </Grid>
+</Window>

@@ -54,17 +54,10 @@ namespace QLPMBUS
         {
             return bnDAL.selectByKeyWord(sKeyword);
         }
-        public int autogenerate_ma(List<BenhNhanDTO> listbenhnhan)
+        public int autogenerate_mabn()
         {
-            int max=0;
-            foreach (BenhNhanDTO bn in listbenhnhan)
-            {
-                if (bn.MaBN > max)
-                {
-                    max = bn.MaBN;
-                }
-            }
-            return max;
+            return bnDAL.autogenerate_mabn();
         }
+
     }
 }

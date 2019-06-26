@@ -51,5 +51,45 @@ namespace QLPMDAL
             }
             return true;
         }
+        
+        public int autogenerate_matoa()
+        {
+            int matoa = 1;
+            string query = string.Empty;
+            query += "SELECT MAX (KQ.MATOA) AS MM from (SELECT CONVERT(float, tblTOA.maToa) AS MATOA FROM tblTOA ) AS KQ";
+
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+                    try
+                    {
+                        con.Open();
+                        SqlDataReader reader = null;
+                        reader = cmd.ExecuteReader();
+                        if (reader.HasRows == true)
+                        {
+                            while (reader.Read())
+                            {
+                                matoa = int.Parse(reader["MM"].ToString()) + 1;
+                            }
+                        }
+
+                        con.Close();
+                        con.Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+
+                    }
+                }
+            }
+            return matoa;
+        }
     }
 }

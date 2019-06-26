@@ -89,5 +89,174 @@ namespace QLPMDAL
             }
             return tien;
         }
+        public int autogenerate_mahd()
+        {
+            int mahd = 1;
+            string query = string.Empty;
+            query += "SELECT MAX (KQ.MAHD) AS MM from (SELECT CONVERT(float, tblHOADON.maHD) AS MABN FROM tblHOADON ) AS KQ";
+
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+                    try
+                    {
+                        con.Open();
+                        SqlDataReader reader = null;
+                        reader = cmd.ExecuteReader();
+                        if (reader.HasRows == true)
+                        {
+                            while (reader.Read())
+                            {
+                                mahd = int.Parse(reader["MM"].ToString()) + 1;
+                            }
+                        }
+
+                        con.Close();
+                        con.Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+
+                    }
+                }
+            }
+            return mahd;
+        }
+        public float doanhthu(string ngHD)
+        {
+            float doanhthu = 0;
+            string query = string.Empty;
+            query += "SELECT sum (HD.tongTien) as doanhthu FROM tblHOADON HD WHERE HD.nglapHD=@ngHD";
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+                    cmd.Parameters.AddWithValue("@ngHD", ngHD);
+     
+                    try
+                    {
+                        con.Open();
+                        SqlDataReader reader = null;
+                        reader = cmd.ExecuteReader();
+                        if (reader.HasRows == true)
+                        {
+                            while (reader.Read())
+                            {
+                                doanhthu = float.Parse(reader["doanhthu"].ToString());
+
+                            }
+                        }
+
+                        con.Close();
+                        con.Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        return 0;
+                    }
+                }
+            }
+            return doanhthu;
+        }
+        public int sobenhnhan(string ngHD)
+        {
+            int sobn = 0;
+            string query = string.Empty;
+            query += "SELECT count (HD.maHD) as sobn FROM tblHOADON HD WHERE HD.nglapHD=@ngHD";
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+                    cmd.Parameters.AddWithValue("@ngHD", ngHD);
+
+                    try
+                    {
+                        con.Open();
+                        SqlDataReader reader = null;
+                        reader = cmd.ExecuteReader();
+                        if (reader.HasRows == true)
+                        {
+                            while (reader.Read())
+                            {
+                                sobn = int.Parse(reader["sobn"].ToString());
+
+                            }
+                        }
+
+                        con.Close();
+                        con.Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        return 0;
+                    }
+                }
+            }
+            return sobn;
+        }
+        public List<HoadonDTO> selectByMonth(string month,string year)
+        {
+            string query = string.Empty;
+            query += " SELECT nglapHD ";
+            query += " FROM [tblHOADON]";
+            query += " WHERE MONTH(nglapHD)=@month and YEAR(nglapHD)=@year group by nglapHD ";
+
+
+            List<HoadonDTO> lsHoadon = new List<HoadonDTO>();
+
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+                    cmd.Parameters.AddWithValue("@month", month);
+                    cmd.Parameters.AddWithValue("@year", year);
+                    try
+                    {
+                        con.Open();
+                        SqlDataReader reader = null;
+                        reader = cmd.ExecuteReader();
+                        if (reader.HasRows == true)
+                        {
+                            while (reader.Read())
+                            {
+                                HoadonDTO hd = new HoadonDTO();
+                                hd.NgayHd = DateTime.Parse(reader["nglapHD"].ToString());
+                                lsHoadon.Add(hd);
+
+                            }
+                        }
+
+                        con.Close();
+                        con.Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        return null;
+                    }
+                }
+            }
+            return lsHoadon;
+        }
     }
 }

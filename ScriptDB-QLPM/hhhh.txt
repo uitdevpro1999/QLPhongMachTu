@@ -1,9 +1,0 @@
-CREATE TRIGGER kham_toida ON tblPKB FOR INSERT AS
-BEGIN
-	IF((COUNT (*) FROM INSERTED WHERE NgayKham=INSERTED.NgayKham)>40)
-	BEGIN
-		PRINT N'Không du?c khám quá 40 b?nh nhân trong 1 ngày'
-		ROLLBACK TRANSACTION
-	END 
-END
-	

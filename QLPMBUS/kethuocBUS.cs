@@ -19,6 +19,17 @@ namespace QLPMBUS
             bool re = ktDAL.kethuoc(kt);
             return re;
         }
-
+        public List<KethuocDTO> selectbypkb(string mapkb)
+        {
+            return ktDAL.selectbypkb(mapkb);
+        }
+        public List<KethuocDTO> baocaobymonth(string month, string year)
+        {
+            return ktDAL.baocaobymonth(month, year);
+        }
+        public int solandungbymonth(string mathuoc, string month, string year)
+        {
+            return ktDAL.solandungbymonth(mathuoc, month, year);
+        }
     }
 }

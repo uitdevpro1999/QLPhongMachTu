@@ -1,0 +1,1 @@
+SQLCMD -S PUT-YOUR-DATABASE-HERE  -E -i createDBQLPM.sql
