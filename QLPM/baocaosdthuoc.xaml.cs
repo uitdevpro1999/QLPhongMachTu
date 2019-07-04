@@ -43,7 +43,7 @@ namespace QLPM
         {
             if (listThuoc == null || listkethuoc == null)
             {
-                MessageBox.Show("Có lỗi khi lấy thông tin từ DB");
+                MessageBox.Show("Có lỗi khi lấy thông tin từ DB","Result", MessageBoxButton.OKCancel, MessageBoxImage.Error);
                 return;
             }
 

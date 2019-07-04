@@ -38,9 +38,9 @@ namespace QLPM
             beBus = new BenhBUS();
             bool kq = beBus.sua(be, temp);
             if (kq == false)
-                MessageBox.Show("Sửa Bệnh thất bại. Vui lòng kiểm tra lại dũ liệu");
+                MessageBox.Show("Sửa Bệnh thất bại. Vui lòng kiểm tra lại dũ liệu", "Result", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
             else
-                MessageBox.Show("Sửa Bệnh thành công");
+                MessageBox.Show("Sửa Bệnh thành công", "Result");
             
         }
         private void quaylai_Click(object sender, RoutedEventArgs e)

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QLPM"
         mc:Ignorable="d"
-        Title="Hóa Đơn" Height="450" Width="800">
+        Title="Hóa Đơn" Height="450" Width="800" Icon="images/icons/cardiogram.ico" Background="LemonChiffon">
     <Grid>
         <Label  Content="Mã hóa đơn:" HorizontalAlignment="Left" Margin="331,48,0,0" VerticalAlignment="Top"/>
         <Label Content="Họ tên bệnh nhân:" HorizontalAlignment="Left" Margin="256,93,0,0" VerticalAlignment="Top"/>
@@ -20,9 +20,8 @@
         <TextBox x:Name="tienthuoc" HorizontalAlignment="Left" Height="23" Margin="597,216,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="90"/>
         <TextBox x:Name="tongtien" HorizontalAlignment="Left" Height="23" Margin="597,264,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="90"/>
         <ComboBox x:Name="mapkb" HorizontalAlignment="Left" Margin="175,46,0,0" VerticalAlignment="Top" Width="63" RenderTransformOrigin="0.498,-1.081"/>
-        <Button Content="Lưu hóa đơn" HorizontalAlignment="Left" Margin="139,342,0,0" VerticalAlignment="Top" Width="116" Click="Button_Click_1"/>
-        <Button Content="Quay lại" HorizontalAlignment="Left" Margin="546,342,0,0" VerticalAlignment="Top" Width="94"/>
-        <Button Content="In hóa đơn" HorizontalAlignment="Left" Margin="339,342,0,0" VerticalAlignment="Top" Width="104"/>
+        <Button Content="Lưu hóa đơn" HorizontalAlignment="Left" Margin="249,342,0,0" VerticalAlignment="Top" Width="116" Click="Button_Click_1"/>
+        <Button Content="Quay lại" HorizontalAlignment="Left" Margin="473,342,0,0" VerticalAlignment="Top" Width="94"/>
         <Label x:Name="ngayhd" HorizontalAlignment="Left" Margin="624,48,0,0" VerticalAlignment="Top" Width="151" Height="23"/>
         <Button Style="{StaticResource MaterialDesignFlatButton}" Content="CHỌN" ToolTip="MaterialDesignFlatButton" Click="Button_Click" HorizontalAlignment="Left" Margin="238,43,0,0" VerticalAlignment="Top" Width="75"  Height="36"></Button>
 
@@ -30,7 +29,7 @@
         <Label Content="VNĐ" HorizontalAlignment="Left" Margin="692,161,0,0" VerticalAlignment="Top"/>
         <Label Content="VNĐ" HorizontalAlignment="Left" Margin="693,216,0,0" VerticalAlignment="Top"/>
         <Label Content="VNĐ" HorizontalAlignment="Left" Margin="693,264,0,0" VerticalAlignment="Top"/>
-        <DataGrid x:Name="grid" HorizontalAlignment="Left" Height="180" Margin="10,139,0,0" VerticalAlignment="Top" Width="480" AutoGenerateColumns="False" DataContext="{Binding ElementName=maThuoc}">
+        <DataGrid x:Name="grid" HorizontalAlignment="Left" Height="180" Margin="10,139,0,0" VerticalAlignment="Top" Width="480" Background="SeaShell" AutoGenerateColumns="False" DataContext="{Binding ElementName=maThuoc}">
 
             <DataGrid.Columns >
                 <DataGridTextColumn Binding="{Binding sTT}" Header="STT" Width="53"/>

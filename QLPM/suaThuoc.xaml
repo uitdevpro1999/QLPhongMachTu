@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QLPM"
         mc:Ignorable="d"
-        Title="suaThuoc" Height="450" Width="800">
+        Title="Thay đổi thông tin thuốc" Height="278.209" Width="800" Icon="images/icons/cardiogram.ico" Background="LemonChiffon">
     <Grid >
         <TextBox x:Name="mathuoc" HorizontalAlignment="Left" Height="23" Margin="212,42,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="dongia" HorizontalAlignment="Left" Height="23" Margin="505,99,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>

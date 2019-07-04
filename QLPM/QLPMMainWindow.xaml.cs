@@ -171,5 +171,11 @@ namespace QLPM
             quydinh qd = new quydinh();
             qd.Show();
         }
+
+        private void DockPanel_MouseLeftButtonUp_10(object sender, MouseButtonEventArgs e)
+        {
+            danhsachbenhnhan dsbn = new danhsachbenhnhan();
+            dsbn.Show();
+        }
     }
 }

@@ -46,9 +46,9 @@ namespace QLPM
             ttBus = new ToathuocBUS();
             bool kq = ttBus.them(tt);
             if (kq == false)
-                MessageBox.Show("Kê toa thất bại");
+                MessageBox.Show("Kê toa thất bại", "Result", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
             else
-            { MessageBox.Show("Kê toa thành công"); }
+            { MessageBox.Show("Kê toa thành công", "Result"); }
             KethuocDTO kt = new KethuocDTO();
             for (int i = 0; i < row; i++)
             {
@@ -65,10 +65,6 @@ namespace QLPM
                 else { kt.SoLuong = val; }
                 ktBus = new KethuocBUS();
                 bool kq1 =ktBus.kethuoc(kt);
-                if (kq1 == false)
-                    MessageBox.Show("Kê toa thất bại");
-                else
-                { MessageBox.Show("Kê toa thành công"); }
             }
         }
         
@@ -93,7 +89,7 @@ namespace QLPM
 
             if (listThuoc == null)
             {
-                MessageBox.Show("Có lỗi khi lấy thông tin từ DB");
+                MessageBox.Show("Có lỗi khi lấy thông tin từ DB", "Result", MessageBoxButton.OKCancel, MessageBoxImage.Error);
                 return;
             }
 
@@ -115,7 +111,7 @@ namespace QLPM
 
             if (listThuoc == null)
             {
-                MessageBox.Show("Có lỗi khi lấy thông tin từ DB");
+                MessageBox.Show("Có lỗi khi lấy thông tin từ DB", "Result", MessageBoxButton.OKCancel, MessageBoxImage.Error);
                 return;
             } 
             foreach (ThuocDTO th in listThuoc)

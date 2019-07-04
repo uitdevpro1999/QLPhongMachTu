@@ -51,7 +51,7 @@ namespace QLPM
 
             if (listBenhNhan == null || listpkb==null || listBenh==null || listcd == null)
             {
-                MessageBox.Show("Có lỗi khi lấy thông tin từ DB");
+                MessageBox.Show("Có lỗi khi lấy thông tin từ DB", "Result", MessageBoxButton.OKCancel, MessageBoxImage.Error);
                 return;
             }
 

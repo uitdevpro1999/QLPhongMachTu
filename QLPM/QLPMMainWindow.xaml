@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QLPM"
         mc:Ignorable="d"
-        Title="QLPMMainWindow" Height="480" Width="800">
+        Title="Phần mềm quản lý phòng mạch - Trang chủ" Height="480" Width="800" Icon="images/icons/cardiogram.ico" >
     <Window.Resources>
 
         <Storyboard x:Key="sbShowLeftMenu" >
@@ -153,6 +153,11 @@
                     <Image Source="images/icons/add-list-32.png" Width="25" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="14,10,10,10"/>
 
                 </DockPanel>
+                <DockPanel VerticalAlignment="Center" HorizontalAlignment="Right" Width="300" Height="50" MouseLeftButtonUp="DockPanel_MouseLeftButtonUp_10"  >
+                    <Label Style="{DynamicResource MenuLabel}" Width="200" Content="Danh sách bệnh nhân" VerticalAlignment="Center" FontFamily="Arial" Foreground="#FF01010F" />
+                    <Image Source="images/icons/conference-call-24.png" Width="25" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="14,10,10,10"/>
+
+                </DockPanel>
             </StackPanel>
             <StackPanel Panel.ZIndex="2" Style="{StaticResource spSlideLeft}" x:Name="spbaocao" Width="300" Height="228.8" Margin="-150,0,0,0" Visibility="Hidden" MouseLeave="spbaocao_MouseLeave" >
                 <StackPanel.Background>
@@ -175,7 +180,6 @@
                 </DockPanel>
             </StackPanel>
             <Image Source="images/backgrounds/madical.jpg" Height="460" Width="941" Canvas.Left="-74" />
-            <Label Content="dfbdf" FontFamily="fonts/vnf-buttermilk-script.ttf"  FontSize="50" Canvas.Left="148" Canvas.Top="359" Height="55" Width="179" />
 
         </Canvas>
 

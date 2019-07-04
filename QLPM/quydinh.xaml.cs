@@ -31,11 +31,11 @@ namespace QLPM
             ThuocBUS thBus = new ThuocBUS();
             List<Cachdung> listcd = thBus.getcachdung();
             List<Donvi> listdv = thBus.getdonvi();
-            this.load_combobox(listdv,listcd);
+            this.load_combobox(listdv, listcd);
         }
         private void load_combobox(List<Donvi> listdv, List<Cachdung> listcd)
         {
-            if (listdv == null || listcd ==null)
+            if (listdv == null || listcd == null)
             {
                 MessageBox.Show("Có lỗi khi lấy thông tin từ DB");
                 return;
@@ -66,9 +66,10 @@ namespace QLPM
         private void tienkham_Click(object sender, RoutedEventArgs e)
         {
             thuoc_hidden();
+            benhnhan_hidden();
             tk.Visibility = Visibility.Visible;
             tk1.Visibility = Visibility.Visible;
-            thaydoitk.Visibility = Visibility.Visible;   
+            thaydoitk.Visibility = Visibility.Visible;
         }
         private void thuoc_hidden()
         {
@@ -97,12 +98,12 @@ namespace QLPM
         }
         private void thaydoitk_Click(object sender, RoutedEventArgs e)
         {
-            
+
             PhieukhambenhBUS pkbBus = new PhieukhambenhBUS();
             pkbBus.tk();
             float tkmoi = float.Parse(tk.Text.ToString());
             float tkcu = PhieukhambenhDTO.TienKham;
-            bool kq=pkbBus.thaydoiTK(tkmoi, tkcu);
+            bool kq = pkbBus.thaydoiTK(tkmoi, tkcu);
             if (kq == false)
             {
                 MessageBox.Show("thay đổi thất bại");
@@ -113,6 +114,7 @@ namespace QLPM
         private void thuoc_Click(object sender, RoutedEventArgs e)
         {
             tienkham_hidden();
+            benhnhan_hidden();
             cachdung.Visibility = Visibility.Visible;
             donvi.Visibility = Visibility.Visible;
             thaydoidv.Visibility = Visibility.Visible;
@@ -146,11 +148,12 @@ namespace QLPM
         private void thaydoidv_Click(object sender, RoutedEventArgs e)
         {
             ThuocBUS thBus = new ThuocBUS();
-            bool kq=thBus.themdv(donvi.Text.ToString());
-            if(kq==false)
+            bool kq = thBus.themdv(donvi.Text.ToString());
+            if (kq == false)
             {
                 MessageBox.Show("Thêm đơn vị thất bại");
-            }else
+            }
+            else
             {
                 MessageBox.Show("Thêm đơn vị thành công");
             }
@@ -192,7 +195,7 @@ namespace QLPM
         private void suadv_Click(object sender, RoutedEventArgs e)
         {
             ThuocBUS thBus = new ThuocBUS();
-            bool kq=thBus.thaydoiDV(dv2.Text, cbb_donvi.Text);
+            bool kq = thBus.thaydoiDV(dv2.Text, cbb_donvi.Text);
             if (kq == false)
             {
                 MessageBox.Show("Sửa đơn vị thất bại");
@@ -262,6 +265,38 @@ namespace QLPM
                 MessageBox.Show("Thêm cách dùng thành công");
             }
             load();
+        }
+        private void benhnhan_hidden()
+        {
+            bn.Visibility = Visibility.Hidden;
+            bn1.Visibility = Visibility.Hidden;
+            thaydoibn.Visibility = Visibility.Hidden;
+        }
+        private void benhnhan_Click(object sender, RoutedEventArgs e)
+        {
+            tienkham_hidden();
+            thuoc_hidden();
+            bn.Visibility = Visibility.Visible;
+            bn1.Visibility = Visibility.Visible;
+            thaydoibn.Visibility = Visibility.Visible;
+        }
+
+        private void thaydoibn_Click(object sender, RoutedEventArgs e)
+        {
+            PhieukhambenhBUS pkbBus = new PhieukhambenhBUS();
+            bool kq1 = pkbBus.drop_trigger_khamtoida();
+            bool kq=pkbBus.thaydoi_khamtoida(int.Parse(bn1.Text.ToString()));
+            MessageBoxImage icon = MessageBoxImage.Warning;
+            
+            if (kq1 == false || kq==false)
+            {
+                MessageBox.Show("Thay đổi số lượng bệnh nhân khám tối đa thất bại","Result",MessageBoxButton.OKCancel,icon);
+            }
+            else 
+            {
+                MessageBox.Show("Thay đổi số lượng bệnh nhân khám tối đa thành công", "Result");
+            }
+            
         }
     }
 }

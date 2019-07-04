@@ -7,3 +7,12 @@ C:\Users\krypton\source\repos\QLPM\QLPMDAL\bin\Debug\QLPMDTO.pdb
 C:\Users\krypton\source\repos\QLPM\QLPMDAL\obj\Debug\QLPMDAL.csproj.CopyComplete
 C:\Users\krypton\source\repos\QLPM\QLPMDAL\obj\Debug\QLPMDAL.dll
 C:\Users\krypton\source\repos\QLPM\QLPMDAL\obj\Debug\QLPMDAL.pdb
+C:\Users\krypton\Desktop\QLPM\QLPMDAL\bin\Debug\QLPMDAL.dll
+C:\Users\krypton\Desktop\QLPM\QLPMDAL\bin\Debug\QLPMDAL.pdb
+C:\Users\krypton\Desktop\QLPM\QLPMDAL\bin\Debug\QLPMDTO.dll
+C:\Users\krypton\Desktop\QLPM\QLPMDAL\bin\Debug\QLPMDTO.pdb
+C:\Users\krypton\Desktop\QLPM\QLPMDAL\obj\Debug\QLPMDAL.csprojAssemblyReference.cache
+C:\Users\krypton\Desktop\QLPM\QLPMDAL\obj\Debug\QLPMDAL.csproj.CoreCompileInputs.cache
+C:\Users\krypton\Desktop\QLPM\QLPMDAL\obj\Debug\QLPMDAL.csproj.CopyComplete
+C:\Users\krypton\Desktop\QLPM\QLPMDAL\obj\Debug\QLPMDAL.dll
+C:\Users\krypton\Desktop\QLPM\QLPMDAL\obj\Debug\QLPMDAL.pdb

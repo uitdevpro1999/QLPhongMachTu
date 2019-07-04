@@ -6,9 +6,9 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:QLPM"
         mc:Ignorable="d"
-        Title="danhsachthuoc" Height="450" Width="800">
+        Title="Danh sách thuốc" Height="450" Width="800" Icon="images/icons/cardiogram.ico" Background="LemonChiffon" >
     <Grid>
-        <DataGrid x:Name="grid" HorizontalAlignment="Left" Height="194" Margin="10,216,0,0" VerticalAlignment="Top" Width="774" AutoGenerateColumns="False" SelectionChanged="grid_SelectionChanged"  >
+        <DataGrid x:Name="grid" HorizontalAlignment="Left" Height="194" Margin="10,216,0,0" VerticalAlignment="Top" Background="SeaShell" Width="774" AutoGenerateColumns="False" SelectionChanged="grid_SelectionChanged"  >
             <DataGrid.ContextMenu>
                 <ContextMenu>
                     <MenuItem Header="Sửa" Click="MenuItem_Click"/>

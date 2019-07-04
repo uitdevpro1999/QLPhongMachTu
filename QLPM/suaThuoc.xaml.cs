@@ -44,7 +44,7 @@ namespace QLPM
         {
             if (listdv == null || listcd == null)
             {
-                MessageBox.Show("Có lỗi khi lấy thông tin từ DB");
+                MessageBox.Show("Có lỗi khi lấy thông tin từ DB","Result", MessageBoxButton.OKCancel, MessageBoxImage.Error);
                 return;
             }
 
@@ -84,9 +84,9 @@ namespace QLPM
             thBus = new ThuocBUS();
             bool kq = thBus.sua(th, temp);
             if (kq == false)
-                MessageBox.Show("Sửa Thuốc thất bại. Vui lòng kiểm tra lại dũ liệu");
+                MessageBox.Show("Sửa Thuốc thất bại. Vui lòng kiểm tra lại dũ liệu", "Result", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
             else
-                MessageBox.Show("Sửa Thuốc thành công");
+                MessageBox.Show("Sửa Thuốc thành công","Result");
         }
 
         private void quaylai_Click(object sender, RoutedEventArgs e)

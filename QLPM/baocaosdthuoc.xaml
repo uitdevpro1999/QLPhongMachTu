@@ -6,7 +6,7 @@
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:QLPM"
         mc:Ignorable="d"
-        Title="Báo cáo sử dụng thuốc" Height="450" Width="800">
+        Title="Báo cáo sử dụng thuốc" Height="450" Width="800" Background="LemonChiffon" Icon="images/icons/cardiogram.ico">
 
     <Grid>
         <TextBox x:Name="nam" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Text="2019" Margin="402,32,299.6,341">
@@ -30,7 +30,7 @@
             <ComboBoxItem Content="11"/>
             <ComboBoxItem Content="12"/>
         </ComboBox>
-        <DataGrid x:Name="grid" HorizontalAlignment="Left" Height="198" Margin="10,166,0,0" VerticalAlignment="Top" Width="774" AutoGenerateColumns="False" DataContext="{Binding ElementName=maThuoc}">
+        <DataGrid x:Name="grid" HorizontalAlignment="Left" Height="244" Margin="10,166,0,0" VerticalAlignment="Top" Width="774" AutoGenerateColumns="False" Background="SeaShell" DataContext="{Binding ElementName=maThuoc}">
 
             <DataGrid.Columns >
                 <DataGridTextColumn Binding="{Binding sTT}" Header="STT" Width="70"/>

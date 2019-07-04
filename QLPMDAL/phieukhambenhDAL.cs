@@ -290,5 +290,99 @@ namespace QLPMDAL
                 return true;
             }
         }
+        public bool drop_trigger_khamtoida()
+        {
+            string query = string.Empty;
+            query += "USE [QLPM]\r\nIF EXISTS (SELECT * FROM sys.objects WHERE [name] = 'kham_toida1')\r\nBEGIN\r\nDROP TRIGGER [dbo].[kham_toida1];\r\nEND;\r\n";
+         
+ 
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+                    try
+                    {
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                        con.Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        return false;
+                    }
+                }
+
+                return true;
+            }
+        }
+        public bool thaydoi_khamtoida(int khamtoida)
+        {
+            string query = string.Empty;
+            query += "EXEC sp_executeSQL N'Create Trigger kham_toida1 ON tblPKB FOR INSERT AS BEGIN IF(Select Count(a.maPKB) From tblPKB a Inner Join INSERTED b On a.NgayKham = b.NgayKham) > 80 BEGIN ROLLBACK TRANSACTION END END'";
+            string triggername = "kham_toida1";
+
+            string tablename = "tblPKB";
+
+
+            StringBuilder cmd = new StringBuilder();
+            
+            cmd.AppendLine("EXEC sp_executeSQL");
+            cmd.AppendLine("N'");
+
+
+            cmd.AppendLine(string.Format("CREATE TRIGGER dbo.{0}", triggername));
+
+            cmd.AppendLine(string.Format("ON dbo.{0}", tablename));
+
+            cmd.AppendLine("AFTER INSERT");
+
+            cmd.AppendLine("AS begin");
+
+            cmd.AppendLine(string.Format("IF(Select Count(a.maPKB) From tblPKB a Inner Join INSERTED b On a.NgayKham = b.NgayKham) > {0}",khamtoida));
+
+            cmd.AppendLine("BEGIN");
+
+
+            cmd.AppendLine("ROLLBACK TRANSACTION");
+
+            cmd.AppendLine("END");
+
+            cmd.AppendLine("END");
+
+            cmd.AppendLine("'");
+
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+
+                using (SqlCommand cm = new SqlCommand())
+                {
+                    cm.Connection = con;
+                    cm.CommandType = System.Data.CommandType.Text;
+                    cm.CommandText = cmd.ToString() ;
+                    //cm.Parameters.AddWithValue("@khamtoida", khamtoida);
+                    try
+                    {
+                        con.Open();
+                        cm.ExecuteNonQuery();
+                        con.Close();
+                        con.Dispose();
+                        
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        return false;
+                    }
+                }
+
+                return true;
+            }
+        }
     }
 }

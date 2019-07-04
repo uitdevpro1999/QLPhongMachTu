@@ -63,7 +63,7 @@ namespace QLPM
 
             if (listBenhnhan == null)
             {
-                MessageBox.Show("Có lỗi khi lấy thông tin từ DB");
+                MessageBox.Show("Có lỗi khi lấy thông tin từ DB", "Result", MessageBoxButton.OKCancel, MessageBoxImage.Error);
                 return;
             }
             foreach (BenhNhanDTO bn in listBenhnhan)
@@ -79,7 +79,7 @@ namespace QLPM
 
             if (listBenhnhan == null)
             {
-                MessageBox.Show("Có lỗi khi lấy thông tin từ DB");
+                MessageBox.Show("Có lỗi khi lấy thông tin từ DB", "Result", MessageBoxButton.OKCancel, MessageBoxImage.Error);
                 return;
             }
             foreach (BenhNhanDTO bn in listBenhnhan)
@@ -124,9 +124,9 @@ namespace QLPM
             hdBus = new HoadonBUS();
             bool kq = hdBus.them(hd);
             if (kq == false)
-                MessageBox.Show("Lưu hóa đơn thất bại. Vui lòng kiểm tra lại dũ liệu");
+                MessageBox.Show("Lưu hóa đơn thất bại. Vui lòng kiểm tra lại dũ liệu", "Result", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
             else
-                MessageBox.Show("Lưu hóa đơn thành công");
+                MessageBox.Show("Lưu hóa đơn thành công", "Result");
         }
         public void load_data(string mapkb)
         {
@@ -142,7 +142,7 @@ namespace QLPM
 
             if (listThuoc == null || listkethuoc==null)
             {
-                MessageBox.Show("Có lỗi khi lấy thông tin từ DB");
+                MessageBox.Show("Có lỗi khi lấy thông tin từ DB", "Result", MessageBoxButton.OKCancel, MessageBoxImage.Error);
                 return;
             }
 

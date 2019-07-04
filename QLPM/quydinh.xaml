@@ -6,19 +6,18 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:QLPM"
         mc:Ignorable="d"
-        Title="Thay đổi quy định" Height="450" Width="800">
+        Title="Thay đổi quy định" Height="450" Width="800" Icon="images/icons/cardiogram.ico" Background="LemonChiffon">
     <Grid>
         <materialDesign:ColorZone Mode="PrimaryMid">
             <StackPanel Orientation="Horizontal" Margin="2">
-                <RadioButton x:Name="loaibenh" Style="{StaticResource MaterialDesignTabRadioButton}"  Margin="4" IsChecked="True" Content="LOẠI BỆNH" />
                 <RadioButton x:Name="thuoc" Style="{StaticResource MaterialDesignTabRadioButton}" Margin="4" IsChecked="False" Content="THUỐC" Click="thuoc_Click" />
                 <RadioButton x:Name="tienkham" Style="{StaticResource MaterialDesignTabRadioButton}" Margin="4" IsChecked="False" Content="TIỀN KHÁM" Click="tienkham_Click" />
-                <RadioButton x:Name="benhnhan" Style="{StaticResource MaterialDesignTabRadioButton}" Margin="4" IsChecked="False" Content="BỆNH NHÂN" />
+                <RadioButton x:Name="benhnhan" Style="{StaticResource MaterialDesignTabRadioButton}" Margin="4" IsChecked="False" Content="BỆNH NHÂN" Click="benhnhan_Click" />
             </StackPanel>
         </materialDesign:ColorZone>
-        <Button x:Name="thaydoitk" Content="Button" HorizontalAlignment="Left" Margin="495,161,0,0" Visibility="Hidden" VerticalAlignment="Top" Width="75" Click="thaydoitk_Click"/>
-        <Label x:Name="tk1" Content="Tiền khám:" HorizontalAlignment="Left" Margin="224,161,0,0" Visibility="Hidden" VerticalAlignment="Top"/>
-        <TextBox x:Name="tk" HorizontalAlignment="Left" Height="23" Margin="325,162,0,0" Visibility="Hidden" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="thaydoitk" Content="Thay đổi" HorizontalAlignment="Left" Margin="462,179,0,0" Visibility="Hidden" VerticalAlignment="Top" Width="95" Click="thaydoitk_Click"/>
+        <Label x:Name="tk1" Content="Tiền khám:" HorizontalAlignment="Left" Margin="211,183,0,0" Visibility="Hidden" VerticalAlignment="Top"/>
+        <TextBox x:Name="tk" HorizontalAlignment="Left" Height="23" Margin="312,184,0,0" Visibility="Hidden" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="donvi" Visibility="Hidden" materialDesign:HintAssist.Hint="Thêm đơn vị" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="91,112,590.6,259" />
         <Button x:Name="thaydoidv" Visibility="Hidden" Content="Thêm" HorizontalAlignment="Left" Margin="224,134,0,0" VerticalAlignment="Top" Width="75" Click="thaydoidv_Click"/>
         <Button x:Name="thaydoicd" Visibility="Hidden" Content="Thêm" HorizontalAlignment="Left" Margin="651,134,0,0" VerticalAlignment="Top" Width="75" Click="thaydoicd_Click"/>
@@ -45,6 +44,9 @@
         <Button x:Name="suacd" Visibility="Hidden" Content="Sửa" HorizontalAlignment="Left" Margin="591,360,0,0" VerticalAlignment="Top" Width="75" Click="suacd_Click" />
         <Button x:Name="xoadv" Visibility="Hidden" Content="Xóa" HorizontalAlignment="Left" Margin="237,300,0,0" VerticalAlignment="Top" Width="75" Click="xoadv_Click" />
         <Button x:Name="xoacd" Visibility="Hidden" Content="Xóa" HorizontalAlignment="Left" Margin="671,300,0,0" VerticalAlignment="Top" Width="75" Click="xoacd_Click" />
+        <Label x:Name="bn" Visibility="Hidden" Content="Số lượng bệnh nhân khám tối đa:" HorizontalAlignment="Left" Margin="147,183,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="bn1" Visibility="Hidden" HorizontalAlignment="Left" Height="25" Margin="358,184,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="74"/>
+        <Button x:Name="thaydoibn" Visibility="Hidden" Content="Thay đổi" HorizontalAlignment="Left" Margin="462,179,0,0" VerticalAlignment="Top" Width="95" Click="thaydoibn_Click"/>
 
     </Grid>
 </Window>

@@ -9,3 +9,14 @@ C:\Users\krypton\source\repos\QLPM\QLPMBUS\bin\Debug\QLPMDTO.pdb
 C:\Users\krypton\source\repos\QLPM\QLPMBUS\obj\Debug\QLPMBUS.csproj.CopyComplete
 C:\Users\krypton\source\repos\QLPM\QLPMBUS\obj\Debug\QLPMBUS.dll
 C:\Users\krypton\source\repos\QLPM\QLPMBUS\obj\Debug\QLPMBUS.pdb
+C:\Users\krypton\Desktop\QLPM\QLPMBUS\bin\Debug\QLPMBUS.dll
+C:\Users\krypton\Desktop\QLPM\QLPMBUS\bin\Debug\QLPMBUS.pdb
+C:\Users\krypton\Desktop\QLPM\QLPMBUS\bin\Debug\QLPMDAL.dll
+C:\Users\krypton\Desktop\QLPM\QLPMBUS\bin\Debug\QLPMDTO.dll
+C:\Users\krypton\Desktop\QLPM\QLPMBUS\bin\Debug\QLPMDAL.pdb
+C:\Users\krypton\Desktop\QLPM\QLPMBUS\bin\Debug\QLPMDTO.pdb
+C:\Users\krypton\Desktop\QLPM\QLPMBUS\obj\Debug\QLPMBUS.csprojAssemblyReference.cache
+C:\Users\krypton\Desktop\QLPM\QLPMBUS\obj\Debug\QLPMBUS.csproj.CoreCompileInputs.cache
+C:\Users\krypton\Desktop\QLPM\QLPMBUS\obj\Debug\QLPMBUS.csproj.CopyComplete
+C:\Users\krypton\Desktop\QLPM\QLPMBUS\obj\Debug\QLPMBUS.dll
+C:\Users\krypton\Desktop\QLPM\QLPMBUS\obj\Debug\QLPMBUS.pdb

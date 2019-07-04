@@ -7,7 +7,7 @@
         
         xmlns:local="clr-namespace:QLPM"
         mc:Ignorable="d"
-        Title="Thêm Bệnh Nhân Mới" Height="450" Width="600.592">
+        Title="Thêm Bệnh Nhân Mới" Height="450" Width="600.592" Icon="images/icons/cardiogram.ico" Background="LemonChiffon">
     <Grid>
 
         <Label Content="Họ và Tên:" HorizontalAlignment="Left" Height="26" Margin="176,103,0,0" VerticalAlignment="Top" Width="64"/>

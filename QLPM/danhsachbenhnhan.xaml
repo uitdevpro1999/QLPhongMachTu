@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QLPM"
         mc:Ignorable="d"
-        Title="danhsachbenhnhan" Height="450" Width="800">
+        Title="Danh sách bệnh nhân" Height="450" Width="800" Background="LemonChiffon" Icon="images/icons/cardiogram.ico">
     <Grid>
-        <DataGrid x:Name="grid" HorizontalAlignment="Left" Height="230" Margin="10,180,0,0" VerticalAlignment="Top" Width="774" AutoGenerateColumns="False" >
+        <DataGrid x:Name="grid" HorizontalAlignment="Left" Height="230" Margin="10,180,0,0" VerticalAlignment="Top" Width="774" Background="SeaShell" AutoGenerateColumns="False" >
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding sTT}" Header="STT" Width="80"/>
                 <DataGridTextColumn Binding="{Binding tenBN}" Header="Họ Tên" Width="180"/>
@@ -18,6 +18,7 @@
 
 
         </DataGrid>
+        <TextBlock HorizontalAlignment="Left" Margin="190,70,0,0" Foreground="Turquoise" FontSize="35" FontWeight="Medium" TextWrapping="Wrap" Text="DANH SÁCH BỆNH NHÂN" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

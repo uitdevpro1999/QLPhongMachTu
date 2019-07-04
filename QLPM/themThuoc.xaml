@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QLPM"
         mc:Ignorable="d"
-        Title="themThuoc" Height="450" Width="600">
+        Title="Thêm thuốc mới" Height="450" Width="600" Icon="images/icons/cardiogram.ico" Background="LemonChiffon">
     <Grid>
 
         

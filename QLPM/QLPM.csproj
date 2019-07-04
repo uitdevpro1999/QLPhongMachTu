@@ -34,7 +34,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\..\..\..\..\dlls\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -131,15 +131,6 @@
     <Compile Include="tracuuBN.xaml.cs">
       <DependentUpon>tracuuBN.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Xoa.xaml.cs">
-      <DependentUpon>Xoa.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="xoaBenh.xaml.cs">
-      <DependentUpon>xoaBenh.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="xoaThuoc.xaml.cs">
-      <DependentUpon>xoaThuoc.xaml</DependentUpon>
-    </Compile>
     <Page Include="baocaodoanhthu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -223,18 +214,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Xoa.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="xoaBenh.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="xoaThuoc.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -298,6 +277,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Resource Include="images\icons\scope_9oj_icon.ico" />
     <Resource Include="images\icons\pill-2-24.png" />
     <Resource Include="images\icons\dollar-3-24.png" />
     <Resource Include="images\icons\pill-32.png" />
@@ -320,6 +300,9 @@
     <Resource Include="images\icons\delete-16.png" />
     <Resource Include="images\icons\add-24.png" />
     <Resource Include="images\icons\arrow-84-24.png" />
+    <Resource Include="images\icons\cardiogram.png" />
+    <Resource Include="images\icons\cardiogram.ico" />
+    <Resource Include="images\icons\conference-call-24.png" />
     <Content Include="images\icons\document.svg" />
     <Resource Include="images\icons\documentx32.png" />
     <Resource Include="images\icons\exam.png" />

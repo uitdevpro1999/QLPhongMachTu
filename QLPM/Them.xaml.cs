@@ -59,9 +59,9 @@ namespace QLPM
             bool kq1 = pkbBus.them(pkb);
             bool kq2 = bnBus.them(bn);
             if (kq1==true && kq2==true)
-                MessageBox.Show("Thêm Bệnh nhân thành công");
+                MessageBox.Show("Thêm Bệnh nhân thành công", "Result");
             else
-                MessageBox.Show("Thêm Bệnh nhân thất bại");
+                MessageBox.Show("Thêm Bệnh nhân thất bại", "Result", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

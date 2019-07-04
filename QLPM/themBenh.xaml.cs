@@ -41,9 +41,9 @@ namespace QLPM
             beBus = new BenhBUS();
             bool kq = beBus.them(be);
             if (kq == false)
-                MessageBox.Show("Thêm loại bệnh thất bại. Vui lòng kiểm tra lại dũ liệu");
+                MessageBox.Show("Thêm loại bệnh thất bại. Vui lòng kiểm tra lại dũ liệu", "Result", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
             else
-                MessageBox.Show("Thêm loại thành công");
+                MessageBox.Show("Thêm loại bệnh thành công", "Result");
 
         }
     }

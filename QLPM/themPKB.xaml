@@ -6,7 +6,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:QLPM"
         mc:Ignorable="d"
-        Title="Thêm phiếu khám bệnh" Height="450" Width="800">
+        Title="Thêm phiếu khám bệnh" Height="450" Width="800" Icon="images/icons/cardiogram.ico" Background="LemonChiffon">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="383*"/>

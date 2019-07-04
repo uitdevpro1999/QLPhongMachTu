@@ -68,7 +68,7 @@ namespace QLPM
 
             if (listThuoc == null)
             {
-                MessageBox.Show("Có lỗi khi lấy thông tin từ DB");
+                MessageBox.Show("Có lỗi khi lấy thông tin từ DB", "Result", MessageBoxButton.OKCancel, MessageBoxImage.Error);
                 return;
             }
 
@@ -150,9 +150,9 @@ namespace QLPM
             thBus = new ThuocBUS();
             bool kq = thBus.xoa(th);
             if (kq == false)
-                MessageBox.Show("Xóa Thuốc thất bại. Vui lòng kiểm tra lại dũ liệu");
+                MessageBox.Show("Xóa Thuốc thất bại. Vui lòng kiểm tra lại dũ liệu", "Result", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
             else
-                MessageBox.Show("Xóa Thuốc thành công");
+                MessageBox.Show("Xóa Thuốc thành công","Result");
             load_data();
 
 

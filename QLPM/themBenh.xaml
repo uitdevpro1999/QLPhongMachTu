@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QLPM"
         mc:Ignorable="d"
-        Title="Thêm loại bệnh" Height="450" Width="800">
+        Title="Thêm loại bệnh" Height="398.311" Width="783.277" Icon="images/icons/cardiogram.ico" Background="LemonChiffon" >
     <Grid>
         <TextBox  x:Name="mabenh" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="368,107,0,0"/>
         <TextBox x:Name="tenbenh" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="368,169,0,0"/>

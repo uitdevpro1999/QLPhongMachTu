@@ -46,7 +46,7 @@ namespace QLPM
 
             if (listBenhNhan == null)
             {
-                MessageBox.Show("Có lỗi khi lấy thông tin từ DB");
+                MessageBox.Show("Có lỗi khi lấy thông tin từ DB", "Result", MessageBoxButton.OKCancel, MessageBoxImage.Error);
                 return;
             }
             foreach (BenhNhanDTO bn in listBenhNhan)
@@ -60,7 +60,7 @@ namespace QLPM
 
             if (listBenhNhan == null)
             {
-                MessageBox.Show("Có lỗi khi lấy thông tin từ DB");
+                MessageBox.Show("Có lỗi khi lấy thông tin từ DB", "Result", MessageBoxButton.OKCancel, MessageBoxImage.Error);
                 return;
             }
             foreach (BenhNhanDTO bn in listBenhNhan)
@@ -85,7 +85,7 @@ namespace QLPM
 
             if (listBenh == null)
             {
-                MessageBox.Show("Có lỗi khi lấy thông tin từ DB");
+                MessageBox.Show("Có lỗi khi lấy thông tin từ DB", "Result", MessageBoxButton.OKCancel, MessageBoxImage.Error);
                 return;
             }           
             foreach (BenhDTO be in listBenh)
@@ -123,9 +123,9 @@ namespace QLPM
             bool kq2 = pkbBus.sua(pkb);
             if (kq2==true && kq1==true)
             {
-                MessageBox.Show("Lập phiếu thành công");
+                MessageBox.Show("Lập phiếu thành công", "Result");
             }
-            else MessageBox.Show("Lập phiếu thất bại");
+            else MessageBox.Show("Lập phiếu thất bại", "Result", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
         }
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {

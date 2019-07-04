@@ -46,5 +46,15 @@ namespace QLPMBUS
             bool re= pkbDAL.thaydoiTK(tkmoi, tkcu);
             return re;
         }
+        public bool drop_trigger_khamtoida()
+        {
+            bool re = pkbDAL.drop_trigger_khamtoida();
+            return re;
+        }
+        public bool thaydoi_khamtoida(int khamtoida)
+        {
+            bool re = pkbDAL.thaydoi_khamtoida(khamtoida);
+            return re;
+        }
     }
 }

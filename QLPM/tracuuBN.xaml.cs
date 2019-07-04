@@ -71,7 +71,7 @@ namespace QLPM
 
             if (listBenhNhan == null)
             {
-                MessageBox.Show("Có lỗi khi lấy thông tin từ DB");
+                MessageBox.Show("Có lỗi khi lấy thông tin từ DB", "Result", MessageBoxButton.OKCancel, MessageBoxImage.Error);
                 return;
             }
 
@@ -164,9 +164,9 @@ namespace QLPM
             bnBus = new BenhNhanBUS();
             bool kq = bnBus.xoa(bn);
             if (kq == false)
-                MessageBox.Show("Xóa Bệnh nhân thất bại. Vui lòng kiểm tra lại dũ liệu");
+                MessageBox.Show("Xóa Bệnh nhân thất bại. Vui lòng kiểm tra lại dũ liệu", "Result", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
             else
-                MessageBox.Show("Xóa Bệnh nhân thành công");
+                MessageBox.Show("Xóa Bệnh nhân thành công", "Result");
             load_data();
 
 
