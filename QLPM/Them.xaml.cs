@@ -38,30 +38,38 @@ namespace QLPM
         }
         private void Them_Click(object sender, RoutedEventArgs e)
         {
-            BenhNhanDTO bn= new BenhNhanDTO();
-            PhieukhambenhDTO pkb = new PhieukhambenhDTO();
-            PhieukhambenhBUS pkbBus = new PhieukhambenhBUS();
-            bn.MaBN = int.Parse(mabenhnhan.Text);
-            bn.TenBN = hoten.Text;
-            if(radio1.IsChecked ==true)
+            if (mabenhnhan.Text == null || hoten.Text == "" || (radio1.IsChecked == false && radio2.IsChecked == false) || ngaysinh.SelectedDate == null || diachi.Text == "")
             {
-                bn.GtBN = "Nam";
-            } else
-            {
-                bn.GtBN = "Nữ";
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin bệnh nhân");
             }
-            bn.NgsinhBN = ngaysinh.SelectedDate.Value;
-            bn.DiachiBN = diachi.Text;
-            bn.MaPKB =pkbBus.autogenerate_mapkb().ToString();
-            pkb.MaPkb= pkbBus.autogenerate_mapkb().ToString();
-            pkb.NgayKham = DateTime.UtcNow.Date;
-            bnBus = new BenhNhanBUS();
-            bool kq1 = pkbBus.them(pkb);
-            bool kq2 = bnBus.them(bn);
-            if (kq1==true && kq2==true)
-                MessageBox.Show("Thêm Bệnh nhân thành công", "Result");
             else
-                MessageBox.Show("Thêm Bệnh nhân thất bại", "Result", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
+            {
+                BenhNhanDTO bn = new BenhNhanDTO();
+                PhieukhambenhDTO pkb = new PhieukhambenhDTO();
+                PhieukhambenhBUS pkbBus = new PhieukhambenhBUS();
+                bn.MaBN = int.Parse(mabenhnhan.Text);
+                bn.TenBN = hoten.Text;
+                if (radio1.IsChecked == true)
+                {
+                    bn.GtBN = "Nam";
+                }
+                else
+                {
+                    bn.GtBN = "Nữ";
+                }
+                bn.NgsinhBN = ngaysinh.SelectedDate.Value;
+                bn.DiachiBN = diachi.Text;
+                bn.MaPKB = pkbBus.autogenerate_mapkb().ToString();
+                pkb.MaPkb = pkbBus.autogenerate_mapkb().ToString();
+                pkb.NgayKham = DateTime.UtcNow.Date;
+                bnBus = new BenhNhanBUS();
+                bool kq1 = pkbBus.them(pkb);
+                bool kq2 = bnBus.them(bn);
+                if (kq1 == true && kq2 == true)
+                    MessageBox.Show("Thêm Bệnh nhân thành công", "Result");
+                else
+                    MessageBox.Show("Thêm Bệnh nhân thất bại", "Result", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

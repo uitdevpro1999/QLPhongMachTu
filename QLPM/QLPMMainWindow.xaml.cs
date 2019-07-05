@@ -177,5 +177,10 @@ namespace QLPM
             danhsachbenhnhan dsbn = new danhsachbenhnhan();
             dsbn.Show();
         }
+
+        private void Label_MouseLeftButtonUp_5(object sender, MouseButtonEventArgs e)
+        {
+            App.Current.Shutdown();
+        }
     }
 }

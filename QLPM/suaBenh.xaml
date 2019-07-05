@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QLPM"
         mc:Ignorable="d"
-        Title="Thay đổi loại bệnh" Height="450" Width="800" Icon="images/icons/cardiogram.ico" Background="LemonChiffon">
+        Title="Thay đổi loại bệnh" Height="450" Width="800" Icon="images/icons/cardiogram.ico" Background="LemonChiffon" ResizeMode="CanMinimize">
     <Grid>
         <TextBox x:Name="mabenh" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="364,84,0,0"/>
         <TextBox x:Name="tenbenh" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="364,146,0,0"/>

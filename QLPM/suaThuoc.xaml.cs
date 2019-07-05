@@ -74,19 +74,42 @@ namespace QLPM
 
         private void Sua_Click(object sender, RoutedEventArgs e)
         {
-            ThuocDTO th = new ThuocDTO();
-            th.MaThuoc = mathuoc.Text;
-            th.TenThuoc = tenthuoc.Text;
-            th.DonGia = float.Parse(dongia.Text);
-            th.DVT = donvi.Text;
-            th.CachDung = cachdung.Text;
-            
-            thBus = new ThuocBUS();
-            bool kq = thBus.sua(th, temp);
-            if (kq == false)
-                MessageBox.Show("Sửa Thuốc thất bại. Vui lòng kiểm tra lại dũ liệu", "Result", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
+            bool kt;
+            try
+            {
+                float.Parse(dongia.Text);
+                kt = true;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Vui lòng nhập số và không được để trống", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                kt = false;
+            }
+            if (kt == false)
+            {
+                dongia.Text = "";
+                dongia.Focus();
+            }
+            else if (mathuoc.Text == null || tenthuoc.Text == null || cachdung.Text == "" || donvi.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin loại thuốc");
+            }
             else
-                MessageBox.Show("Sửa Thuốc thành công","Result");
+            {
+                ThuocDTO th = new ThuocDTO();
+                th.MaThuoc = mathuoc.Text;
+                th.TenThuoc = tenthuoc.Text;
+                th.DonGia = float.Parse(dongia.Text);
+                th.DVT = donvi.Text;
+                th.CachDung = cachdung.Text;
+
+                thBus = new ThuocBUS();
+                bool kq = thBus.sua(th, temp);
+                if (kq == false)
+                    MessageBox.Show("Sửa Thuốc thất bại. Vui lòng kiểm tra lại dũ liệu", "Result", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
+                else
+                    MessageBox.Show("Sửa Thuốc thành công", "Result");
+            }
         }
 
         private void quaylai_Click(object sender, RoutedEventArgs e)

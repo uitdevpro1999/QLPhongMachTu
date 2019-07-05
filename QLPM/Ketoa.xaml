@@ -6,7 +6,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:QLPM"
         mc:Ignorable="d"
-        Title="Kê toa" Height="450" Width="800" Icon="images/icons/cardiogram.ico" Background="LemonChiffon" >
+        Title="Kê toa" Height="450" Width="800" Icon="images/icons/cardiogram.ico" Background="LemonChiffon" ResizeMode="CanMinimize">
     <Grid>
         
         <DataGrid x:Name="grid" HorizontalAlignment="Left" Height="186" Margin="10,224,0,0" VerticalAlignment="Top" Width="774" AutoGenerateColumns="False" DataContext="{Binding ElementName=maThuoc}" SelectionChanged="grid_SelectionChanged">

@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QLPM"
         mc:Ignorable="d"
-        Title="Thêm thuốc mới" Height="450" Width="600" Icon="images/icons/cardiogram.ico" Background="LemonChiffon">
+        Title="Thêm thuốc mới" Height="450" Width="600" Icon="images/icons/cardiogram.ico" Background="LemonChiffon" ResizeMode="CanMinimize">
     <Grid>
 
         
-        <TextBox x:Name="mathuoc" HorizontalAlignment="Left" Height="23" Margin="255,61,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="dongia" HorizontalAlignment="Left" Height="23" Margin="255,216,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="tenthuoc" HorizontalAlignment="Left" Height="23" Margin="255,109,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="mathuoc" HorizontalAlignment="Left" Height="23" Margin="255,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="dongia" HorizontalAlignment="Left" Height="23" Margin="255,216,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tenthuoc" HorizontalAlignment="Left" Height="23" Margin="255,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label  Content="Đơn vị tính:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,156,0,0"/>
         <Label  Content="Tên thuốc:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,106,0,0"/>
         <Label  Content="Mã thuốc:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,58,0,0" RenderTransformOrigin="1.942,0.787"/>

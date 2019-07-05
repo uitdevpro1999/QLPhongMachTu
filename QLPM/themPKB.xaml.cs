@@ -103,29 +103,36 @@ namespace QLPM
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            PhieukhambenhDTO pkb = new PhieukhambenhDTO();
-            ChandoanDTO cd = new ChandoanDTO();
-            List<BenhDTO> listBenh = beBus.select();
-            cd.MaPkb = mapkb.Text;
-            foreach (BenhDTO be in listBenh)
+            if (mapkb.Text == null || trieuchung.Text == null)
             {
-                if(benh.Text==be.TenBenh)
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin phiếu khám bệnh");
+            }
+            else
+            {
+                PhieukhambenhDTO pkb = new PhieukhambenhDTO();
+                ChandoanDTO cd = new ChandoanDTO();
+                List<BenhDTO> listBenh = beBus.select();
+                cd.MaPkb = mapkb.Text;
+                foreach (BenhDTO be in listBenh)
                 {
-                    cd.MaBenh = be.MaBenh;
+                    if (benh.Text == be.TenBenh)
+                    {
+                        cd.MaBenh = be.MaBenh;
+                    }
                 }
+                pkb.MaPkb = mapkb.Text;
+                pkb.NgayKham = DateTime.UtcNow.Date;
+                pkb.TrieuChung = trieuchung.Text;
+                PhieukhambenhBUS pkbBus = new PhieukhambenhBUS();
+                ChandoanBUS cdBus = new ChandoanBUS();
+                bool kq1 = cdBus.them(cd);
+                bool kq2 = pkbBus.sua(pkb);
+                if (kq2 == true && kq1 == true)
+                {
+                    MessageBox.Show("Lập phiếu thành công", "Result");
+                }
+                else MessageBox.Show("Lập phiếu thất bại", "Result", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
             }
-            pkb.MaPkb = mapkb.Text;
-            pkb.NgayKham = DateTime.UtcNow.Date;
-            pkb.TrieuChung = trieuchung.Text;
-            PhieukhambenhBUS pkbBus = new PhieukhambenhBUS();
-            ChandoanBUS cdBus = new ChandoanBUS();
-            bool kq1 = cdBus.them(cd);
-            bool kq2 = pkbBus.sua(pkb);
-            if (kq2==true && kq1==true)
-            {
-                MessageBox.Show("Lập phiếu thành công", "Result");
-            }
-            else MessageBox.Show("Lập phiếu thất bại", "Result", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
         }
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {

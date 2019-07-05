@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QLPM"
         mc:Ignorable="d"
-        Title="Tra cứu bệnh nhân" Height="450" Width="800" Background="LemonChiffon" Icon="images/icons/cardiogram.ico">
+        Title="Tra cứu bệnh nhân" Height="450" Width="800" Background="LemonChiffon" Icon="images/icons/cardiogram.ico" ResizeMode="CanMinimize">
     <Grid>
         <DataGrid x:Name="grid" HorizontalAlignment="Left" Height="194" Margin="10,216,0,0" VerticalAlignment="Top" Width="774" AutoGenerateColumns="False" SelectionChanged="grid_SelectionChanged" Background="SeaShell" >
             <DataGrid.ContextMenu>

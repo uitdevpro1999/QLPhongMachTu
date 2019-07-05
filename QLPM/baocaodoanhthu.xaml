@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:QLPM"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="QLPM.baocaodoanhthu"
         mc:Ignorable="d"
-        Title="Báo cáo doanh thu" Height="450" Width="800" Background="LemonChiffon" Icon="images/icons/cardiogram.ico">
+        Title="Báo cáo doanh thu" Height="450" Width="800" Background="LemonChiffon" Icon="images/icons/cardiogram.ico" ResizeMode="CanMinimize">
     <Grid>
 
         <TextBox x:Name="nam" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Text="2019" Margin="402,32,299.6,341">

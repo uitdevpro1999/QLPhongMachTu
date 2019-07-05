@@ -32,15 +32,22 @@ namespace QLPM
         }           
         private void Sua_Click(object sender, RoutedEventArgs e)
         {
-            BenhDTO be = new BenhDTO();
-            be.MaBenh = mabenh.Text;
-            be.TenBenh = tenbenh.Text;
-            beBus = new BenhBUS();
-            bool kq = beBus.sua(be, temp);
-            if (kq == false)
-                MessageBox.Show("Sửa Bệnh thất bại. Vui lòng kiểm tra lại dũ liệu", "Result", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
+            if (mabenh.Text == null || tenbenh.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin loại bệnh");
+            }
             else
-                MessageBox.Show("Sửa Bệnh thành công", "Result");
+            {
+                BenhDTO be = new BenhDTO();
+                be.MaBenh = mabenh.Text;
+                be.TenBenh = tenbenh.Text;
+                beBus = new BenhBUS();
+                bool kq = beBus.sua(be, temp);
+                if (kq == false)
+                    MessageBox.Show("Sửa Bệnh thất bại. Vui lòng kiểm tra lại dũ liệu", "Result", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
+                else
+                    MessageBox.Show("Sửa Bệnh thành công", "Result");
+            }
             
         }
         private void quaylai_Click(object sender, RoutedEventArgs e)

@@ -33,24 +33,6 @@ namespace QLPM
             InitializeComponent();
             load();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            string query = string.Empty;
-            query += "Select * from [tblBENHNHAN] where maBN=@maBN ";
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = ConfigurationManager.AppSettings["ConnectionString"];
-            con.Open();
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = query;
-            cmd.Parameters.AddWithValue("@maBN", mabn.Text);
-            cmd.Connection = con;
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable db1 = new DataTable("tblBENHNHAN");
-            da.Fill(db1);
-            grid.ItemsSource = db1.DefaultView;
-
-        }
         private void load()
         {
             db1.Clear();

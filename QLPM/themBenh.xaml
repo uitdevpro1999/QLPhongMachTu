@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QLPM"
         mc:Ignorable="d"
-        Title="Thêm loại bệnh" Height="398.311" Width="783.277" Icon="images/icons/cardiogram.ico" Background="LemonChiffon" >
+        Title="Thêm loại bệnh" Height="398.311" Width="783.277" Icon="images/icons/cardiogram.ico" Background="LemonChiffon" ResizeMode="CanMinimize" >
     <Grid>
-        <TextBox  x:Name="mabenh" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="368,107,0,0"/>
-        <TextBox x:Name="tenbenh" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="368,169,0,0"/>
+        <TextBox  x:Name="mabenh" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="368,107,0,0"/>
+        <TextBox x:Name="tenbenh" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="368,169,0,0"/>
         <Label  Content="Mã loại bệnh:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="283,104,0,0"/>
         <Label  Content="Tên loại bệnh:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="283,166,0,0"/>
-        <Button Content="Thêm" HorizontalAlignment="Left" VerticalAlignment="Top" Width="114" Margin="348,261,0,0" Height="33"/>
+        <Button Content="Thêm" HorizontalAlignment="Left" VerticalAlignment="Top" Width="114" Margin="348,261,0,0" Height="33" Click="Them_Click"/>
 
     </Grid>
 </Window>

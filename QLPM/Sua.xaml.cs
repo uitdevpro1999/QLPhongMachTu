@@ -36,25 +36,33 @@ namespace QLPM
         
         private void Sua_Click(object sender, RoutedEventArgs e)
         {
-            BenhNhanDTO bn = new BenhNhanDTO();
-            bn.MaBN = int.Parse(mabenhnhan.Text);
-            bn.TenBN = hoten.Text;
-            if (radio1.IsChecked == true)
+
+            if (mabenhnhan.Text == null || hoten.Text == "" || (radio1.IsChecked == false && radio2.IsChecked == false) || ngaysinh.SelectedDate == null || diachi.Text == "")
             {
-                bn.GtBN = "Nam";
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin bệnh nhân");
             }
             else
             {
-                bn.GtBN = "Nữ";
+                BenhNhanDTO bn = new BenhNhanDTO();
+                bn.MaBN = int.Parse(mabenhnhan.Text);
+                bn.TenBN = hoten.Text;
+                if (radio1.IsChecked == true)
+                {
+                    bn.GtBN = "Nam";
+                }
+                else
+                {
+                    bn.GtBN = "Nữ";
+                }
+                bn.NgsinhBN = ngaysinh.SelectedDate.Value;
+                bn.DiachiBN = diachi.Text;
+                bnBus = new BenhNhanBUS();
+                bool kq = bnBus.sua(bn, temp);
+                if (kq == false)
+                    MessageBox.Show("Sửa Bệnh nhân thất bại. Vui lòng kiểm tra lại dũ liệu", "Result", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
+                else
+                    MessageBox.Show("Sửa Bệnh nhân thành công", "Result");
             }
-            bn.NgsinhBN = ngaysinh.SelectedDate.Value;
-            bn.DiachiBN = diachi.Text;
-            bnBus = new BenhNhanBUS();
-            bool kq = bnBus.sua(bn,temp);
-            if (kq == false)
-                MessageBox.Show("Sửa Bệnh nhân thất bại. Vui lòng kiểm tra lại dũ liệu", "Result", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
-            else
-                MessageBox.Show("Sửa Bệnh nhân thành công","Result");
             
         }
 

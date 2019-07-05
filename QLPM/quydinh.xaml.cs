@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -98,17 +98,37 @@ namespace QLPM
         }
         private void thaydoitk_Click(object sender, RoutedEventArgs e)
         {
-
-            PhieukhambenhBUS pkbBus = new PhieukhambenhBUS();
-            pkbBus.tk();
-            float tkmoi = float.Parse(tk.Text.ToString());
-            float tkcu = PhieukhambenhDTO.TienKham;
-            bool kq = pkbBus.thaydoiTK(tkmoi, tkcu);
-            if (kq == false)
+            bool kt;
+            try
             {
-                MessageBox.Show("thay đổi thất bại");
+                float.Parse(tk.Text);
+                kt = true;
             }
-            else MessageBox.Show("thay đổi thành công");
+            catch (Exception)
+            {
+                MessageBox.Show("Vui lòng nhập số và không được để trống", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                kt = false;
+            }
+            if (kt == false)
+            {
+                tk.Text = "";
+                tk.Focus();
+            }
+            else
+            {
+                PhieukhambenhBUS pkbBus = new PhieukhambenhBUS();
+                pkbBus.tk();
+                float tkmoi = float.Parse(tk.Text.ToString());
+                float tkcu = PhieukhambenhDTO.TienKham;
+                bool kq = pkbBus.thaydoiTK(tkmoi, tkcu);
+                if (kq == false)
+                {
+                    MessageBox.Show("thay đổi thất bại");
+                }
+                else MessageBox.Show("thay đổi thành công");
+            }
+            
+            
         }
 
         private void thuoc_Click(object sender, RoutedEventArgs e)
@@ -280,23 +300,49 @@ namespace QLPM
             bn1.Visibility = Visibility.Visible;
             thaydoibn.Visibility = Visibility.Visible;
         }
-
+        
+        private static bool IsNumber(string val)
+        {
+            if (val != "")
+                return Regex.IsMatch(val, @"^[0-9]\d*\.?[0]*$");
+            else return true;
+        }
+       
         private void thaydoibn_Click(object sender, RoutedEventArgs e)
         {
-            PhieukhambenhBUS pkbBus = new PhieukhambenhBUS();
-            bool kq1 = pkbBus.drop_trigger_khamtoida();
-            bool kq=pkbBus.thaydoi_khamtoida(int.Parse(bn1.Text.ToString()));
-            MessageBoxImage icon = MessageBoxImage.Warning;
-            
-            if (kq1 == false || kq==false)
+            bool kt;
+            try
             {
-                MessageBox.Show("Thay đổi số lượng bệnh nhân khám tối đa thất bại","Result",MessageBoxButton.OKCancel,icon);
+                int.Parse(bn1.Text);
+                kt = true;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Vui lòng nhập số và không được để trống","Warning",MessageBoxButton.OK, MessageBoxImage.Warning);
+                kt = false;
+            }
+            if (kt == false)
+            {
+                bn1.Text = "";
+                bn1.Focus();
             }
             else 
             {
-                MessageBox.Show("Thay đổi số lượng bệnh nhân khám tối đa thành công", "Result");
+                PhieukhambenhBUS pkbBus = new PhieukhambenhBUS();
+                bool kq1 = pkbBus.drop_trigger_khamtoida();
+                bool kq = pkbBus.thaydoi_khamtoida(int.Parse(bn1.Text.ToString()));
+                MessageBoxImage icon = MessageBoxImage.Warning;
+
+                if (kq1 == false || kq == false)
+                {
+                    MessageBox.Show("Thay đổi số lượng bệnh nhân khám tối đa thất bại", "Result", MessageBoxButton.OKCancel, icon);
+                }
+                else
+                {
+                    MessageBox.Show("Thay đổi số lượng bệnh nhân khám tối đa thành công", "Result");
+                }
             }
-            
+
         }
     }
 }

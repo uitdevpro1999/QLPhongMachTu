@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:QLPM"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Danh sách khám bệnh" Height="450" Width="800" Icon="images/icons/cardiogram.ico" Background="LemonChiffon" >
+        Title="Danh sách khám bệnh" Height="450" Width="800" Icon="images/icons/cardiogram.ico" Background="LemonChiffon" ResizeMode="CanMinimize" >
     <Grid>
         <Label Content="Ngày khám:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="282,102,0,0"/>
         <DatePicker x:Name="ngaykham" materialDesign:HintAssist.Hint="Chọn ngày" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="360,91,0,0" SelectedDateChanged="ngaykham_SelectedDateChanged"/>

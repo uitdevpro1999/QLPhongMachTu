@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QLPM"
         mc:Ignorable="d"
-        Title="Phần mềm quản lý phòng mạch - Trang chủ" Height="480" Width="800" Icon="images/icons/cardiogram.ico" >
+        Title="Phần mềm quản lý phòng mạch - Trang chủ" Height="480" Width="800" Icon="images/icons/cardiogram.ico" ResizeMode="CanMinimize">
     <Window.Resources>
 
         <Storyboard x:Key="sbShowLeftMenu" >
@@ -80,7 +80,7 @@
                 </StackPanel.Background>
 
                 <DockPanel VerticalAlignment="Center" HorizontalAlignment="Right" Width="200" Height="50">
-                    <Label Style="{DynamicResource MenuLabel}" Width="140" Content="Đóng" VerticalAlignment="Center" FontFamily="Arial" Foreground="#FF01010F" MouseLeftButtonUp="Label_MouseLeftButtonUp" />
+                    <Label Style="{DynamicResource MenuLabel}" Width="140" Content="Đóng" VerticalAlignment="Center" FontFamily="Arial" Foreground="#FF01010F" MouseLeftButtonUp="Label_MouseLeftButtonUp_5"  />
                     <Image Source="images/icons/x-mark-32.png" Width="25" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="14,10,10,10"/>
 
                 </DockPanel>

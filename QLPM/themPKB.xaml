@@ -6,7 +6,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:QLPM"
         mc:Ignorable="d"
-        Title="Thêm phiếu khám bệnh" Height="450" Width="800" Icon="images/icons/cardiogram.ico" Background="LemonChiffon">
+        Title="Thêm phiếu khám bệnh" Height="450" Width="800" Icon="images/icons/cardiogram.ico" Background="LemonChiffon" ResizeMode="CanMinimize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="383*"/>
@@ -24,7 +24,7 @@
         <TextBox x:Name="mapkb" HorizontalAlignment="Left" Height="23" Margin="80.662,164,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
         <Label Content="Mã PKB: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2.662,162,0,0" RenderTransformOrigin="0.444,-0.394" Grid.Column="1"/>
         <Button Content="Kê toa" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="170,168,0,0" Click="Button_Click_3"/>
-        <Button Content="Lập phiếu" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="77,168,0,0" Click="Button_Click_1"/>
+        <Button Content="Lập phiếu" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Margin="52,168,0,0" Click="Button_Click_1"/>
         <ComboBox x:Name="mabenhnhan" HorizontalAlignment="Left" Margin="168,42,0,0" VerticalAlignment="Top" Width="47" Height="25"/>
         <Label Content="Mã bệnh nhân" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="77,42,0,0"/>
         <Button HorizontalAlignment="Left" Margin="225,42,0,0" VerticalAlignment="Top" Width="62" Height="28" RenderTransformOrigin="2.926,-2.622" Click="Button_Click">

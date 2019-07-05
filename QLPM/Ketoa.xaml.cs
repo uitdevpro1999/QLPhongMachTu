@@ -131,41 +131,55 @@ namespace QLPM
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
-            bool notExist=true;
-            DataRow[] rows = db1.Select();
-            if (rows.Length == 0)
+            bool kt;
+            try
             {
-                thBus = new ThuocBUS();
-                List<ThuocDTO> listThuoc = thBus.select();
-                this.loadData_Vao_GridView(listThuoc, soluong.Text);
-                grid.ItemsSource = db1.DefaultView;
+                int.Parse(soluong.Text);
+                kt = true;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Vui lòng nhập số và không được để trống", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                kt = false;
+            }
+            if (kt == false)
+            {
+                soluong.Text = "";
+                soluong.Focus();
             }
             else
             {
-                for (int i = 0; i < rows.Length; i++)
-                {
-                    if (rows[i]["tenThuoc"].ToString() == thuoc.Text.ToString())
-                    {
-                        int sl = 0;
-                        sl = int.Parse(rows[i]["soLuong"].ToString());
-                        db1.Rows[i][0] = sl + int.Parse(soluong.Text.ToString());
-                        notExist = false;
-                        break;
-                    }   
-                }
-                if(notExist==true)
+                bool notExist = true;
+                DataRow[] rows = db1.Select();
+                if (rows.Length == 0)
                 {
                     thBus = new ThuocBUS();
                     List<ThuocDTO> listThuoc = thBus.select();
                     this.loadData_Vao_GridView(listThuoc, soluong.Text);
                     grid.ItemsSource = db1.DefaultView;
                 }
+                else
+                {
+                    for (int i = 0; i < rows.Length; i++)
+                    {
+                        if (rows[i]["tenThuoc"].ToString() == thuoc.Text.ToString())
+                        {
+                            int sl = 0;
+                            sl = int.Parse(rows[i]["soLuong"].ToString());
+                            db1.Rows[i][0] = sl + int.Parse(soluong.Text.ToString());
+                            notExist = false;
+                            break;
+                        }
+                    }
+                    if (notExist == true)
+                    {
+                        thBus = new ThuocBUS();
+                        List<ThuocDTO> listThuoc = thBus.select();
+                        this.loadData_Vao_GridView(listThuoc, soluong.Text);
+                        grid.ItemsSource = db1.DefaultView;
+                    }
+                }
             }
-            
-            
-            
-
         }
 
         private void grid_SelectionChanged(object sender, SelectionChangedEventArgs e)

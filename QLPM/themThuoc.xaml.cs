@@ -70,7 +70,28 @@ namespace QLPM
         }
         private void Them_Click(object sender, RoutedEventArgs e)
         {
-
+            bool kt;
+            try
+            {
+                float.Parse(dongia.Text);
+                kt = true;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Vui lòng nhập số và không được để trống", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                kt = false;
+            }
+            if (kt == false)
+            {
+                dongia.Text = "";
+                dongia.Focus();
+            }
+            else if(mathuoc.Text==null||tenthuoc.Text==null||cachdung.Text==""||donvi.Text=="")
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin loại thuốc");
+            }
+            else
+            {
                 ThuocDTO th = new ThuocDTO();
                 th.MaThuoc = mathuoc.Text;
                 th.TenThuoc = tenthuoc.Text;
@@ -84,6 +105,7 @@ namespace QLPM
                     MessageBox.Show("Thêm Thuốc thất bại. Vui lòng kiểm tra lại dũ liệu", "Result", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
                 else
                     MessageBox.Show("Thêm Thuốc thành công", "Result");
+            }
             
         }
     }
