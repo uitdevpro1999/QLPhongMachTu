@@ -174,5 +174,9 @@ namespace QLPM
             }
             grid.ItemsSource = table.DefaultView;
         }
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
