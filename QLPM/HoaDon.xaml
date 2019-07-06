@@ -21,7 +21,7 @@
         <TextBox x:Name="tongtien" HorizontalAlignment="Left" Height="23" Margin="597,264,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="90"/>
         <ComboBox x:Name="mapkb" HorizontalAlignment="Left" Margin="175,46,0,0" VerticalAlignment="Top" Width="63" RenderTransformOrigin="0.498,-1.081"/>
         <Button Content="Lưu hóa đơn" HorizontalAlignment="Left" Margin="249,342,0,0" VerticalAlignment="Top" Width="116" Click="Button_Click_1"/>
-        <Button Content="Quay lại" HorizontalAlignment="Left" Margin="473,342,0,0" VerticalAlignment="Top" Width="94"/>
+        <Button Content="Quay lại" HorizontalAlignment="Left" Margin="473,342,0,0" VerticalAlignment="Top" Width="94" Click="Button_Click_2"/>
         <Label x:Name="ngayhd" HorizontalAlignment="Left" Margin="624,48,0,0" VerticalAlignment="Top" Width="151" Height="23"/>
         <Button Style="{StaticResource MaterialDesignFlatButton}" Content="CHỌN" ToolTip="MaterialDesignFlatButton" Click="Button_Click" HorizontalAlignment="Left" Margin="238,43,0,0" VerticalAlignment="Top" Width="75"  Height="36"></Button>
 
