@@ -30,7 +30,7 @@
         <Label Content="Nhập từ khóa:" HorizontalAlignment="Left" Height="25" Margin="171,86,0,0" VerticalAlignment="Top" Width="112"/>
         <TextBox x:Name="mabn" HorizontalAlignment="Left" Height="25" Margin="289,86,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="114"/>
         <Button Content="Tìm kiếm" HorizontalAlignment="Left" Margin="460,89,0,0" VerticalAlignment="Top" Width="92" Click="BtnTim_Click"/>
-        <Button Content="Quay lại" HorizontalAlignment="Left" Margin="583,89,0,0" VerticalAlignment="Top" Width="92"/>
+        <Button Content="Quay lại" HorizontalAlignment="Left" Margin="583,89,0,0" VerticalAlignment="Top" Width="92" Click="Button_Click"/>
 
     </Grid>
 </Window>
